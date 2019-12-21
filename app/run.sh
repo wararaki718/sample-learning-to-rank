@@ -3,7 +3,7 @@
 cd elasticsearch-learning-to-rank/demo
 
 ## download data & ranklib
-python prepare.py
+# python prepare.py
 
 ## wait for statup the elasticsearch
 status='red'

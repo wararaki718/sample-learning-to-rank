@@ -10,6 +10,9 @@ services:
       - es
     networks:
       - es-net
+    volumes:
+      - ./app/ranklib:/work/ranklib
+      - ./app/data:/work/data
   es:
     build: ./es
     image: es-ltr:1.0
