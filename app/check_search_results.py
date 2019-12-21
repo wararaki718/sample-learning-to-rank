@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from configparser import ConfigParser
 
 from elasticsearch import Elasticsearch
 
@@ -61,7 +62,7 @@ def main():
     # es settings
     es_host = options.es_host
     es_index = options.es_index
-    es_client = Elasticsearch(es_hosts=[es_host])
+    es_client = Elasticsearch(hosts=[es_host])
 
     # request
     print('## search with learning-to-rank')

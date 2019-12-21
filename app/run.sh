@@ -16,6 +16,7 @@ do
     status=`echo "$response" | sed -r 's/^[[:space:]]+|[[:space:]]+$//g'`
 done
 
+## setup es-ltr
 python index_ml_tmdb.py
 
 python load_features.py
@@ -23,8 +24,8 @@ python load_features.py
 python train.py
 
 echo "learning-to-rank setup is complemeted!!"
-
+echo "search..."
 # python search.py Rambo
-#python search_with_ltr.py --keyword Ramob
+python check_search_results.py --keyword Ramob --es-host "http://${ES_HOST}:${ES_PORT}"
 
 echo "DONE"

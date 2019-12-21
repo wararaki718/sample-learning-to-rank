@@ -21,7 +21,7 @@ docker-compose up
 ## search
 
 ```shell
-python check_search_results.py
+python app/check_search_results.py --keyword Rambo
 ```
 
 ## refs
