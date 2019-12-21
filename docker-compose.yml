@@ -25,10 +25,10 @@ services:
     image: lmenezes/cerebro:0.8.3
     ports:
       - 9000:9000
-    networks:
-      - es-net
     depends_on:
       - es
+    networks:
+      - es-net
 
 networks:
   es-net:
