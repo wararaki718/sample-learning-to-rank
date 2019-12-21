@@ -1,4 +1,4 @@
-# sample-learning-to-rank
+# elasticsearch with learning-to-rank
 
 ## build docker image
 
