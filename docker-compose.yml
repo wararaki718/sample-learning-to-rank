@@ -2,7 +2,7 @@ version: "3"
 services:
   app:
     build: ./app
-    image: ltr-demo:1.0
+    image: setup-ltr:1.0
     environment:
       - ES_HOST=es
       - ES_PORT=9200
@@ -11,8 +11,7 @@ services:
     networks:
       - es-net
     volumes:
-      - ./app/ranklib:/work/ranklib
-      - ./app/data:/work/data
+      - ./app/demo:/work/demo
   es:
     build: ./es
     image: es-ltr:1.0
@@ -22,6 +21,14 @@ services:
       - discovery.type=single-node
     networks:
       - es-net
+  cerebro:
+    image: lmenezes/cerebro:0.8.3
+    ports:
+      - 9000:9000
+    networks:
+      - es-net
+    depends_on:
+      - es
 
 networks:
   es-net:

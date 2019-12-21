@@ -4,6 +4,7 @@ cd elasticsearch-learning-to-rank/demo
 
 ## download data & ranklib
 # python prepare.py
+cp /work/demo/* .
 
 ## wait for statup the elasticsearch
 status='red'
@@ -17,14 +18,13 @@ done
 
 python index_ml_tmdb.py
 
-echo "unused learning-to-rank" 
-python search.py Rambo
-
 python load_features.py
 
 python train.py
 
-echo "use learning-to-rank"
-python search.py Rambo
+echo "learning-to-rank setup is complemeted!!"
+
+# python search.py Rambo
+#python search_with_ltr.py --keyword Ramob
 
 echo "DONE"

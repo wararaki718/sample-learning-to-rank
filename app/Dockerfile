@@ -12,6 +12,7 @@ WORKDIR /work
 RUN git clone https://github.com/o19s/elasticsearch-learning-to-rank.git
 
 COPY run.sh /work/run.sh
-COPY settings.cfg elasticsearch-learning-to-rank/demo/settings.cfg
+COPY search_with_ltr.py /work/elasticsearch-learning-to-rank/demo/search_with_ltr.py
+COPY settings.cfg /work/elasticsearch-learning-to-rank/demo/settings.cfg
 
 CMD ["bash", "run.sh"]
