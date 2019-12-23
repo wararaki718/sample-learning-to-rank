@@ -6,7 +6,7 @@
 docker-compose build
 ```
 
-## download data and libraries
+## download data and a library
 
 ```shell
 bash prepare.sh
