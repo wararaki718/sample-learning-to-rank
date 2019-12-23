@@ -26,6 +26,6 @@ python train.py
 echo "learning-to-rank setup is complemeted!!"
 echo "search..."
 # python search.py Rambo
-python check_search_results.py --keyword Ramob --es-host "http://${ES_HOST}:${ES_PORT}"
+python check_search_results.py --keyword Rambo --es-host "http://${ES_HOST}:${ES_PORT}"
 
 echo "DONE"
