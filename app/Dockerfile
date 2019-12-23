@@ -9,7 +9,7 @@ RUN pip install -r requirements.txt && \
     rm requirements.txt
 
 WORKDIR /work
-RUN git clone https://github.com/o19s/elasticsearch-learning-to-rank.git
+RUN git clone -b es_7_4 https://github.com/o19s/elasticsearch-learning-to-rank.git
 
 COPY run.sh /work/run.sh
 COPY check_search_results.py /work/elasticsearch-learning-to-rank/demo/check_search_results.py
