@@ -19,8 +19,7 @@ done
 ## setup es-ltr
 python index_ml_tmdb.py
 
-python load_features.py
-
+## model train
 python train.py
 
 echo "learning-to-rank setup is complemeted!!"
