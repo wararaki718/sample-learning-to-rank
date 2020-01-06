@@ -23,11 +23,11 @@ def create_es_query(keyword: str) -> dict:
     return query
 
 
-def create_es_ltr_query(keywords: str, model_type: str="test_6") -> dict:
+def create_es_ltr_query(keyword: str, model_type: str="test_6") -> dict:
     query = {
         "query": {
             "multi_match": {
-                "query": keywords,
+                "query": keyword,
                 "fields": ["title", "overview"]
             }
         },
@@ -36,7 +36,7 @@ def create_es_ltr_query(keywords: str, model_type: str="test_6") -> dict:
                 "rescore_query": {
                     "sltr": {
                         "params": {
-                            "keywords": keywords
+                            "keywords": keyword
                         },
                         "model": model_type
                     }
@@ -51,6 +51,7 @@ def show_results(response: dict):
     hits = response.get('hits').get('hits')
     for i, hit in enumerate(hits):
         print(i+1, hit['_source']['title'])
+    print('')
 
 
 def main():
@@ -68,13 +69,11 @@ def main():
     es_query = create_es_ltr_query(search_keyword)
     response = es_client.search(index=es_index, body=es_query, request_timeout=60)
     show_results(response)
-    print('')
 
     print('## search without learning-to-rank')
     es_query = create_es_query(search_keyword)
     response = es_client.search(index=es_index, body=es_query, request_timeout=60)
     show_results(response)
-    print('')
 
 
 if __name__ == '__main__':
