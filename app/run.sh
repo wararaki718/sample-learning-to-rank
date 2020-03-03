@@ -6,7 +6,7 @@ cd elasticsearch-learning-to-rank/demo
 # python prepare.py
 cp /work/demo/* .
 
-## wait for statup the elasticsearch
+## wait for startup the elasticsearch
 status='red'
 while [ "$status" != "green" ]
 do
